@@ -1,0 +1,38 @@
+<script type="">
+	
+	let items = [0,1,2,3,4];
+
+	function connected(p,r){
+		let check = root(p) === root(r);
+		console.log('isConnect: ' + p +' and ' + r ,root(p) === root(r))
+		return check;
+	}
+
+
+	function root(i){
+		while(i != items[i]) i = items[i];
+		return i;
+	}
+
+	//If not connected set the value or q to r
+	function union(p,r){
+		let i = root(p);
+		let j = root(r);
+
+		items[i] = j;
+
+		log();
+	}
+
+	function log(){
+		console.log('items', items);	
+	}
+	
+	log();
+	union(2,4);
+	union(2,3);
+	union(1,2);
+	union(0,4);
+	
+
+</script>
